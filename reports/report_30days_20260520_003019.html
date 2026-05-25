@@ -1,0 +1,188 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>全渠道评价分析报告</title>
+        <style>
+            body { font-family: sans-serif; background: #f5f7fa; padding: 20px; color:#333; }
+            .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; }
+            .dashboard { display: flex; gap: 15px; margin-bottom: 30px; }
+            .card { flex: 1; padding: 20px; border-radius: 8px; text-align: center; color: white; }
+            .card-total { background: #34495e; } .card-pos { background: #27ae60; } .card-neg { background: #e74c3c; } .card-neu { background: #f39c12; }
+            .card h2 { margin: 10px 0 0; font-size: 32px; }
+            .pct { font-size: 16px; opacity: 0.85; margin-left: 5px; font-weight: normal; }
+            .insights { display: flex; gap: 20px; margin-bottom: 30px; }
+            .insight-box { flex: 1; border: 1px solid #eee; padding: 20px; border-radius: 8px; border-top: 4px solid #ccc; background:#fcfcfc; }
+            .box-title { margin-top: 0; color: #2c3e50; border-bottom: 1px dashed #ddd; padding-bottom: 10px; margin-bottom: 15px; }
+            .review-mini-card { background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 4px; font-size: 13px; }
+            .bad-card { border-left: 4px solid #e74c3c; } .good-card { border-left: 4px solid #27ae60; }
+            .rmc-header { display: flex; justify-content: space-between; margin-bottom: 6px; font-weight: bold; }
+            .rmc-ai { background: #e8f4f8; display: inline-block; padding: 3px 6px; border-radius: 4px; font-size: 12px; font-weight:bold; color: #333; }
+            .data-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 12px; }
+            .data-table th, .data-table td { border: 1px solid #eee; padding: 10px; text-align: left; }
+            .data-table th { background: #f8f9fa; }
+            .daily-table th { background: #e8f4f8; text-align: center; }
+            .daily-table td { text-align: center; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 style="text-align:center; padding-bottom:15px; border-bottom: 2px solid #eee;">📊 APP 全渠道评价智能分析报告</h1>
+            <div class="dashboard">
+                <div class="card card-total"><h3>总数</h3><h2>6</h2></div>
+                <div class="card card-pos"><h3>好评</h3><h2>0<span class="pct">(0.0%)</span></h2></div>
+                <div class="card card-neu"><h3>中评</h3><h2>0<span class="pct">(0.0%)</span></h2></div>
+                <div class="card card-neg"><h3>差评</h3><h2>6<span class="pct">(100.0%)</span></h2></div>
+            </div>
+            <div class="insights">
+                <div class="insight-box" style="flex: 1; border-top-color: #3498db;">
+                    <h3 class="box-title">📊 总体渠道概况</h3>
+                    <p style="font-weight: bold;">总评论数：6 条</p>
+                    <ul style="list-style: none; padding: 0; line-height: 2.0;">
+                        <li>🔹 华为应用市场：<b>0</b> 条</li>
+                        <li>🔹 腾讯应用宝：<b>0</b> 条</li>
+                        <li>🔹 苹果App Store：<b>6</b> 条</li>
+                    </ul>
+                </div>
+                <div class="insight-box" style="flex: 2; border-top-color: #9b59b6;">
+                    <h3 class="box-title">📈 每日市场评论数量统计</h3>
+                    <div style="overflow-x: auto;"><table border="1" class="dataframe data-table daily-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>日期</th>
+      <th>华为市场</th>
+      <th>腾讯应用宝</th>
+      <th>苹果App Store</th>
+      <th>合计</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2026-05-13</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-05-06</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-05-01</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-04-29</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-04-21</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>2 条</td>
+      <td>2 条</td>
+    </tr>
+  </tbody>
+</table></div>
+                </div>
+            </div>
+            <div class="insights">
+                <div class="insight-box" style="border-top-color: #e74c3c;">
+                    <h3>📉 差评雷区 TOP 5</h3><ul><li>🔴 <b>功能Bug</b>：2次</li><li>🔴 <b>UI体验</b>：2次</li><li>🔴 <b>服务</b>：2次</li></ul><div class="review-mini-card bad-card"><div class="rmc-header"><span class="rmc-tag bad-tag">【功能Bug】</span><span>1星</span></div><div class="rmc-content">"连着wifi说无网..."</div><div class="rmc-ai">🤖 AI总结：WiFi下误报无网</div></div><div class="review-mini-card bad-card"><div class="rmc-header"><span class="rmc-tag bad-tag">【UI体验】</span><span>1星</span></div><div class="rmc-content">"进入app之后，一片空白，根本打不开..."</div><div class="rmc-ai">🤖 AI总结：首页空白打不开</div></div><div class="review-mini-card bad-card"><div class="rmc-header"><span class="rmc-tag bad-tag">【服务】</span><span>1星</span></div><div class="rmc-content">"我看这里理我吗..."</div><div class="rmc-ai">🤖 AI总结：客服响应缺失</div></div><div class="review-mini-card bad-card"><div class="rmc-header"><span class="rmc-tag bad-tag">【UI体验】</span><span>1星</span></div><div class="rmc-content">"为什么打不开啊？？？？？..."</div><div class="rmc-ai">🤖 AI总结：应用无法打开</div></div><div class="review-mini-card bad-card"><div class="rmc-header"><span class="rmc-tag bad-tag">【功能Bug】</span><span>1星</span></div><div class="rmc-content">"除了借钱能点开，其他都点不开..."</div><div class="rmc-ai">🤖 AI总结：仅借钱页可用</div></div>
+                </div>
+                <div class="insight-box" style="border-top-color: #27ae60;">
+                    <h3>📈 好评亮点 TOP 5</h3><ul><li>暂无</li></ul>
+                </div>
+            </div>
+            <h3 style="margin-top:20px; padding-bottom: 10px; border-bottom: 2px solid #eee;">🔍 评价明细清单</h3>
+            <div style="overflow-x: auto;"><table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>来源</th>
+      <th>具体时间</th>
+      <th>标题</th>
+      <th>内容</th>
+      <th>评分</th>
+      <th>情感倾向</th>
+      <th>问题分类</th>
+      <th>一句话总结</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>App Store</td>
+      <td>2026-05-13 02:13:22</td>
+      <td>app一直不稳定</td>
+      <td>连着wifi说无网</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>功能Bug</td>
+      <td>WiFi下误报无网</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-05-06 09:29:25</td>
+      <td>进入app之后，点不开，一片空白</td>
+      <td>进入app之后，一片空白，根本打不开</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>UI体验</td>
+      <td>首页空白打不开</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-05-01 01:56:31</td>
+      <td>没有银行卡的没用</td>
+      <td>我是想在这边开户，你开户你要实名认证，你实名认证之后又要银行卡，没有银行卡不能开户</td>
+      <td>4</td>
+      <td>负向</td>
+      <td>服务</td>
+      <td>开户流程卡顿</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-04-29 02:20:59</td>
+      <td>时隔多年，@中信银行  还是一样的烂，一样的低效和敷衍。 我看看有微博公关吗？ @中信百信银行  所以也不能信任，多年前也感受不良 ​​​</td>
+      <td>我看这里理我吗</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>服务</td>
+      <td>客服响应缺失</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-04-21 08:27:43</td>
+      <td>为什么打不开啊？？？？？</td>
+      <td>为什么打不开啊？？？？？</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>UI体验</td>
+      <td>应用无法打开</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-04-21 03:46:15</td>
+      <td>垃圾</td>
+      <td>除了借钱能点开，其他都点不开</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>功能Bug</td>
+      <td>仅借钱页可用</td>
+    </tr>
+  </tbody>
+</table></div>
+        </div>
+    </body>
+    </html>
+    

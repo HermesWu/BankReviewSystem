@@ -1,0 +1,347 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>全渠道评价分析报告</title>
+        <style>
+            body { font-family: sans-serif; background: #f5f7fa; padding: 20px; color:#333; }
+            .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; }
+            .dashboard { display: flex; gap: 15px; margin-bottom: 30px; }
+            .card { flex: 1; padding: 20px; border-radius: 8px; text-align: center; color: white; }
+            .card-total { background: #34495e; } .card-pos { background: #27ae60; } .card-neg { background: #e74c3c; } .card-neu { background: #f39c12; }
+            .card h2 { margin: 10px 0 0; font-size: 32px; }
+            .pct { font-size: 16px; opacity: 0.85; margin-left: 5px; font-weight: normal; }
+            .insights { display: flex; gap: 20px; margin-bottom: 30px; }
+            .insight-box { flex: 1; border: 1px solid #eee; padding: 20px; border-radius: 8px; border-top: 4px solid #ccc; background:#fcfcfc; }
+            .box-title { margin-top: 0; color: #2c3e50; border-bottom: 1px dashed #ddd; padding-bottom: 10px; margin-bottom: 15px; }
+            .review-mini-card { background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 4px; font-size: 13px; }
+            .bad-card { border-left: 4px solid #e74c3c; } .good-card { border-left: 4px solid #27ae60; }
+            .rmc-header { display: flex; justify-content: space-between; margin-bottom: 6px; font-weight: bold; }
+            .rmc-ai { background: #e8f4f8; display: inline-block; padding: 3px 6px; border-radius: 4px; font-size: 12px; font-weight:bold; color: #333; }
+            .data-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 12px; }
+            .data-table th, .data-table td { border: 1px solid #eee; padding: 10px; text-align: left; }
+            .data-table th { background: #f8f9fa; }
+            .daily-table th { background: #e8f4f8; text-align: center; }
+            .daily-table td { text-align: center; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 style="text-align:center; padding-bottom:15px; border-bottom: 2px solid #eee;">📊 APP 全渠道评价智能分析报告</h1>
+            <div class="dashboard">
+                <div class="card card-total"><h3>总数</h3><h2>17</h2></div>
+                <div class="card card-pos"><h3>好评</h3><h2>3<span class="pct">(17.6%)</span></h2></div>
+                <div class="card card-neu"><h3>中评</h3><h2>2<span class="pct">(11.8%)</span></h2></div>
+                <div class="card card-neg"><h3>差评</h3><h2>12<span class="pct">(70.6%)</span></h2></div>
+            </div>
+            <div class="insights">
+                <div class="insight-box" style="flex: 1; border-top-color: #3498db;">
+                    <h3 class="box-title">📊 总体渠道概况</h3>
+                    <p style="font-weight: bold;">总评论数：17 条</p>
+                    <ul style="list-style: none; padding: 0; line-height: 2.0;">
+                        <li>🔹 华为应用市场：<b>11</b> 条</li>
+                        <li>🔹 腾讯应用宝：<b>6</b> 条</li>
+                        <li>🔹 苹果App Store：<b>0</b> 条</li>
+                    </ul>
+                </div>
+                <div class="insight-box" style="flex: 2; border-top-color: #9b59b6;">
+                    <h3 class="box-title">📈 每日市场评论数量统计</h3>
+                    <div style="overflow-x: auto;"><table border="1" class="dataframe data-table daily-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>日期</th>
+      <th>华为市场</th>
+      <th>腾讯应用宝</th>
+      <th>苹果App Store</th>
+      <th>合计</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2026-05-14</td>
+      <td>1 条</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-05-11</td>
+      <td>1 条</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-05-02</td>
+      <td>1 条</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-04-09</td>
+      <td>1 条</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-03-29</td>
+      <td>1 条</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-03-15</td>
+      <td>1 条</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-03-12</td>
+      <td>1 条</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-03-02</td>
+      <td>1 条</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-02-07</td>
+      <td>0 条</td>
+      <td>4 条</td>
+      <td>0 条</td>
+      <td>4 条</td>
+    </tr>
+    <tr>
+      <td>2026-02-04</td>
+      <td>1 条</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-01-28</td>
+      <td>2 条</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>2 条</td>
+    </tr>
+    <tr>
+      <td>2026-01-24</td>
+      <td>0 条</td>
+      <td>2 条</td>
+      <td>0 条</td>
+      <td>2 条</td>
+    </tr>
+  </tbody>
+</table></div>
+                </div>
+            </div>
+            <div class="insights">
+                <div class="insight-box" style="border-top-color: #e74c3c;">
+                    <h3>📉 差评雷区 TOP 5</h3><ul><li>🔴 <b>闪退</b>：6次</li><li>🔴 <b>服务</b>：2次</li><li>🔴 <b>功能Bug</b>：2次</li><li>🔴 <b>UI体验</b>：1次</li><li>🔴 <b>登录</b>：1次</li></ul><div class="review-mini-card bad-card"><div class="rmc-header"><span class="rmc-tag bad-tag">【闪退】</span><span>0星</span></div><div class="rmc-content">"米同学 |  | 真的跟差劲啊 每隔一段时间莫名其妙登录是 app 会闪退 |  | 2026-02-07 | 0 | 0..."</div><div class="rmc-ai">🤖 AI总结：登录时闪退</div></div><div class="review-mini-card bad-card"><div class="rmc-header"><span class="rmc-tag bad-tag">【服务】</span><span>0星</span></div><div class="rmc-content">"预览 | 评论 | 55 | 用户评论 | 3.3 | 522人评分 | 全部 | 最新 | 好评 | 中评 | 差评 | 米同学 |  | 真的跟差劲啊 每隔一段时间莫名其妙登录是 app 会闪退 |  | 2026-02-07 | 0 | 0 | 杰 |  | 专门下载应用宝来给个差评，一个有自..."</div><div class="rmc-ai">🤖 AI总结：官网非最新版</div></div><div class="review-mini-card bad-card"><div class="rmc-header"><span class="rmc-tag bad-tag">【闪退】</span><span>0星</span></div><div class="rmc-content">"米同学 |  | 真的跟差劲啊 每隔一段时间莫名其妙登录是 app 会闪退 |  | 2026-02-07 | 0 | 0 | 杰 |  | 专门下载应用宝来给个差评，一个有自己官网的银行，官网有APP下载页的银行，下载的既然不是最新版，最新版要靠第三方APP下载，不更新就打不开进不去，这还想用户安..."</div><div class="rmc-ai">🤖 AI总结：登录时闪退</div></div><div class="review-mini-card bad-card"><div class="rmc-header"><span class="rmc-tag bad-tag">【服务】</span><span>0星</span></div><div class="rmc-content">"杰 |  | 专门下载应用宝来给个差评，一个有自己官网的银行，官网有APP下载页的银行，下载的既然不是最新版，最新版要靠第三方APP下载，不更新就打不开进不去，这还想用户安心放钱到你银行？自己官网不是最新版，最新版在第三方，还做什么网站，把服务器都关了得了 |  | 2026-01-24 | 1 |..."</div><div class="rmc-ai">🤖 AI总结：官网非最新版</div></div><div class="review-mini-card bad-card"><div class="rmc-header"><span class="rmc-tag bad-tag">【功能Bug】</span><span>1星</span></div><div class="rmc-content">"honor20-lite 第一次出现打开就是黑屏的情况，我还以为我手机坏了，希望改进，毕竟是管钱的软件，出现这样的情况我不太放心把钱放你们银行..."</div><div class="rmc-ai">🤖 AI总结：黑屏无法使用</div></div>
+                </div>
+                <div class="insight-box" style="border-top-color: #27ae60;">
+                    <h3>📈 好评亮点 TOP 5</h3><ul><li>🟢 <b>服务</b>：2次</li><li>🟢 <b>UI体验</b>：1次</li></ul><div class="review-mini-card good-card"><div class="rmc-header"><span class="rmc-tag good-tag">【服务】</span><span>5星</span></div><div class="rmc-content">"honor9X 中信银行太棒了。..."</div><div class="rmc-ai">🤖 AI总结：中信银行很棒</div></div><div class="review-mini-card good-card"><div class="rmc-header"><span class="rmc-tag good-tag">【服务】</span><span>5星</span></div><div class="rmc-content">"Mate40 使用体验很好啊，为什么评分这么低呢？！..."</div><div class="rmc-ai">🤖 AI总结：使用体验很好</div></div><div class="review-mini-card good-card"><div class="rmc-header"><span class="rmc-tag good-tag">【UI体验】</span><span>4星</span></div><div class="rmc-content">"nova 10 呃呃我是因为联动卡才下载了，但是没有黑屏的现象啊。。。可能是手机型号不同的问题。。？（也可能是别的）我倒是觉得用的挺溜的..."</div><div class="rmc-ai">🤖 AI总结：使用流畅无黑屏</div></div>
+                </div>
+            </div>
+            <h3 style="margin-top:20px; padding-bottom: 10px; border-bottom: 2px solid #eee;">🔍 评价明细清单</h3>
+            <div style="overflow-x: auto;"><table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>来源</th>
+      <th>具体时间</th>
+      <th>标题</th>
+      <th>内容</th>
+      <th>评分</th>
+      <th>情感倾向</th>
+      <th>问题分类</th>
+      <th>一句话总结</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>华为市场</td>
+      <td>2026-05-14 00:00:00</td>
+      <td>无标题</td>
+      <td>Mate40Pro 都这么久了顶部显示还是不显示全，不能修复一下顶部把他显示全吗？在手机设置屏幕顶部显示还是不行。当然其它功能组目前为止我没发现有什么问题。</td>
+      <td>3</td>
+      <td>负向</td>
+      <td>UI体验</td>
+      <td>顶部显示不全</td>
+    </tr>
+    <tr>
+      <td>华为市场</td>
+      <td>2026-05-11 00:00:00</td>
+      <td>无标题</td>
+      <td>honor9X 中信银行太棒了。</td>
+      <td>5</td>
+      <td>正向</td>
+      <td>服务</td>
+      <td>中信银行很棒</td>
+    </tr>
+    <tr>
+      <td>华为市场</td>
+      <td>2026-05-02 00:00:00</td>
+      <td>无标题</td>
+      <td>nova 10 呃呃我是因为联动卡才下载了，但是没有黑屏的现象啊。。。可能是手机型号不同的问题。。？（也可能是别的）我倒是觉得用的挺溜的</td>
+      <td>4</td>
+      <td>正向</td>
+      <td>UI体验</td>
+      <td>使用流畅无黑屏</td>
+    </tr>
+    <tr>
+      <td>华为市场</td>
+      <td>2026-04-09 00:00:00</td>
+      <td>无标题</td>
+      <td>HUAWEI-nova7 黑屏什么原因，是鸿蒙生态问题还是银行问题</td>
+      <td>2</td>
+      <td>负向</td>
+      <td>闪退</td>
+      <td>黑屏原因不明</td>
+    </tr>
+    <tr>
+      <td>华为市场</td>
+      <td>2026-03-29 00:00:00</td>
+      <td>无标题</td>
+      <td>honor20-lite 第一次出现打开就是黑屏的情况，我还以为我手机坏了，希望改进，毕竟是管钱的软件，出现这样的情况我不太放心把钱放你们银行</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>功能Bug</td>
+      <td>黑屏无法使用</td>
+    </tr>
+    <tr>
+      <td>华为市场</td>
+      <td>2026-03-15 00:00:00</td>
+      <td>无标题</td>
+      <td>Mate40 使用体验很好啊，为什么评分这么低呢？！</td>
+      <td>5</td>
+      <td>正向</td>
+      <td>服务</td>
+      <td>使用体验很好</td>
+    </tr>
+    <tr>
+      <td>华为市场</td>
+      <td>2026-03-12 00:00:00</td>
+      <td>无标题</td>
+      <td>nova 10 ？不更新黑屏进不去几个意思</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>闪退</td>
+      <td>黑屏无法进入</td>
+    </tr>
+    <tr>
+      <td>华为市场</td>
+      <td>2026-03-02 00:00:00</td>
+      <td>无标题</td>
+      <td>nova 12 Pro 逗我吗，每次打开都要重新登录又要搞人脸和验证码，麻烦的要死，要不是因为联名卡我才不办这个</td>
+      <td>2</td>
+      <td>负向</td>
+      <td>登录</td>
+      <td>重复登录验证</td>
+    </tr>
+    <tr>
+      <td>腾讯应用宝</td>
+      <td>2026-02-07 00:00:00</td>
+      <td>无标题</td>
+      <td>米同学 |  | 真的跟差劲啊 每隔一段时间莫名其妙登录是 app 会闪退 |  | 2026-02-07 | 0 | 0 | 杰 |  | 专门下载应用宝来给个差评，一个有自己官网的银行，官网有APP下载页的银行，下载的既然不是最新版，最新版要靠第三方APP下载，不更新就打不开进不去，这还想用户安心放钱到你银行？自己官网不是最新版，最新版在第三方，还做什么网站，把服务器都关了得了 |  | 2026-01-24 | 1 | 0 |  |  | 2025 年还不适配沉浸式状态栏 |  | 2025-11-25 | 0 | 0 | 一生平安 |  | 好好好好好 |  | 2025-07-02 | 1 | 0 | ୧⍤⃝😉 |  | 卡的要命，还闪退，不好用， |  | 2025-02-08 | 0 | 0 | 唐林宝 |  | 好好好好 |  | 2025-01-21 | 0 | 0 | 平安喜乐万事顺意 |  | 中信银行不错 |  | 2024-10-19 | 0 | 0 | 平安喜乐万事顺意 |  | 中信银行不错 |  | 2024-10-19 | 0 | 0 | 耶格湖北王利华 |  | 很好，转账很方便 |  | 2024-06-29 | 0 | 0 | 神舟十四 |  | APP打不开！我要投诉！ |  | 2024-02-22 | 2 | 0 | 神舟十四 |  | 这款软件怎么删除？ |  |  | 2024-02-22 | 0 | 0 | 阿白 |  | 使用不好， |  | 2023-11-24 | 1 | 0 | 袁永根 |  | 好，很完美！ |  | 2023-04-27 | 0 | 0 | 美玉 |  | 服务态度好 |  | 2023-04-09 | 1 | 0 | .⁹ᴳ.有人要翻车死了ᯤ. |  | 感觉不安全 |  | 2023-02-15 | 1 | 0 | 江萍 |  | 服务态度好，为用户着想。 |  | 2022-12-24 | 0 | 0 | 好運來來來  |  | 非常完美！ |  | 2022-09-08 | 0 | 0 | 박인환 |  | 非常完美 |  | 2022-09-07 | 0 | 0 | 天蓝色 |  | 这个8.5.2版本最近一直闪退 |  | 2022-08-29 | 0 | 1 | peter：下载8.5.5可正常使用 | 共1条回复 | ArthurC |  | 闪退啊，这么大个银行出这问题 |  | 2022-08-28 | 0 | 1 | peter：下载8.5.5可正常使用 | 共1条回复 | 🌺🌺李琼 |  | 更新后闪退 |  | 2022-08-27 | 0 | 0 | Rocky |  | 新的V8.5.2装到我小米11国际版MIUI Global 13.0.6上就闪退，根本启动不了。什么时候能解决啊 |  | 2022-08-26 | 3 | 1 | peter：下载8.5.5可正常使用 | 共1条回复 | peter |  | 更新后閃退,重新卸载再安裝,反复六次,始終閃退 |  | 2022-08-17 | 3 | 0 | Arthur |  | 开不了app, 太差！ |  | 2022-08-14 | 1 | 1 | peter：下载8.5.5可正常使用 | 共1条回复 | 嘿 |  | 更新後，開啟app 會閃退 |  | 2022-08-11 | 2 | 3 | peter：下载8.5.5版本可正常使用 | 共3条回复 | 小5 |  | 真烂，打开APP登录后，点哪里都提示“资源正在拼命加载中，请稍等”，等了半天也没动静！ |  | 2022-07-25 | 2 | 0 | 笑对人生 |  | 营业厅小，去解放道营业厅服务人员态度差的要命，开个卡要这证明那证明，果断放弃不用了 |  | 2022-06-21 | 2 | 0 | 全18249258055 |  | 满意的话 |  | 2022-05-28 | 0 | 0 | 慈悲心 |  | 感恩您们的辛勤付出！🌹❤️🙏 |  | 2022-05-09 | 1 | 0 | 雨霏霏 |  | 老是打不开 |  | 2022-04-06 | 2 | 1 | peter：下载8.5.5可正常使用 | 共1条回复 | 无名小姐姐 |  | 太费量了 |  | 2021-11-20 | 2 | 0 | 牵动 |  | ，句句金句 |  | 2021-10-14 | 1 | 0 | L明财 |  | 没工作可以办卡吗 |  | 2021-09-19 | 2 | 0 | 搁浅 |  | 太差劲了 |  | 2021-07-17 | 2 | 0 | 雪山苍穹 |  | 中信银行信用卡方便快捷 |  | 2021-06-24 | 1 | 0 | John |  | 传个身份证半天认证不了 |  | 2021-06-20 | 1 | 0 | 李银涛 |  | 非常的好 |  | 2021-05-28 | 0 | 0 | 永无止境 |  | 很好完美 |  | 2021-04-27 | 1 | 0 | 李果子👉   👈 |  | 很好很好 |  | 2021-03-24 | 0 | 0 | 朱祖德 |  | 服务态度很好 |  | 2021-03-22 | 0 | 0 | 平安的你 |  | 很好快捷 |  | 2021-01-23 | 1 | 0 | 转身，未来！ |  | 嗯哪行啊吧 |  | 2021-01-11 | 0 | 0 | 城厢街道仁爱家园沈爱萍 |  | 到临浦来开一家 |  | 2020-12-10 | 1 | 0 | 城厢街道仁爱家园沈爱萍 |  | 在临浦来开一家 |  | 2020-12-10 | 1 | 0 | 『*』 |  | laji银行，牛批得很嘛，劳资跑了五趟才办理工资卡成功，如果能给零星绝不给一星！ |  | 2020-10-30 | 14 | 1 | ᝰꫛꪮꪮꫜ 🌙：笑死我了 | 共1条回复 | 繁*芜 |  | 怎么没有指纹登录 |  | 2020-10-09 | 2 | 0 | ོ*⁰ |  | 指纹功能不正常 |  | 2020-09-27 | 1 | 0 | 像*风 |  | 好用，方便，省心中 |  | 2020-09-25 | 0 | 0 | 晚*邮 |  | 不错，中信银行，APP |  | 2020-08-10 | 1 | 5 | 吴国强：中信银行手机黑屏打不开 | 共5条回复 | c*兔 |  | 用这个软件申请了人生中的第一张信用卡，里面有很多信用卡种类可以选择，而且每种卡有不同的优惠。选来选去，最终选择了中信京东联名卡，免年费、京东全年plus 卡以及全年爱奇艺会员，实在太适合我这种追剧的宅女了(∩ᵒ̴̶̷̤⌔ᵒ̴̶̷̤∩)填写资料提交之后，一个月左右就提醒我可以去银行激活。激活速度蛮快，银行工作人员态度也不错，网络办卡比银行方便多了！已经安利给朋友 (＾▽＾) | 展开 |  | 2020-02-15 | 3 | 0</td>
+      <td>0</td>
+      <td>负向</td>
+      <td>闪退</td>
+      <td>登录时闪退</td>
+    </tr>
+    <tr>
+      <td>腾讯应用宝</td>
+      <td>2026-02-07 00:00:00</td>
+      <td>无标题</td>
+      <td>米同学 |  | 真的跟差劲啊 每隔一段时间莫名其妙登录是 app 会闪退 |  | 2026-02-07 | 0 | 0</td>
+      <td>0</td>
+      <td>负向</td>
+      <td>闪退</td>
+      <td>登录时闪退</td>
+    </tr>
+    <tr>
+      <td>腾讯应用宝</td>
+      <td>2026-02-07 00:00:00</td>
+      <td>无标题</td>
+      <td>2026-02-07 | 0 | 0</td>
+      <td>0</td>
+      <td>中性</td>
+      <td>其他</td>
+      <td>仅含时间数据</td>
+    </tr>
+    <tr>
+      <td>腾讯应用宝</td>
+      <td>2026-02-07 00:00:00</td>
+      <td>无标题</td>
+      <td>预览 | 评论 | 55 | 用户评论 | 3.3 | 522人评分 | 全部 | 最新 | 好评 | 中评 | 差评 | 米同学 |  | 真的跟差劲啊 每隔一段时间莫名其妙登录是 app 会闪退 |  | 2026-02-07 | 0 | 0 | 杰 |  | 专门下载应用宝来给个差评，一个有自己官网的银行，官网有APP下载页的银行，下载的既然不是最新版，最新版要靠第三方APP下载，不更新就打不开进不去，这还想用户安心放钱到你银行？自己官网不是最新版，最新版在第三方，还做什么网站，把服务器都关了得了 |  | 2026-01-24 | 1 | 0 |  |  | 2025 年还不适配沉浸式状态栏 |  | 2025-11-25 | 0 | 0 | 一生平安 |  | 好好好好好 |  | 2025-07-02 | 1 | 0 | ୧⍤⃝😉 |  | 卡的要命，还闪退，不好用， |  | 2025-02-08 | 0 | 0 | 唐林宝 |  | 好好好好 |  | 2025-01-21 | 0 | 0 | 平安喜乐万事顺意 |  | 中信银行不错 |  | 2024-10-19 | 0 | 0 | 平安喜乐万事顺意 |  | 中信银行不错 |  | 2024-10-19 | 0 | 0 | 耶格湖北王利华 |  | 很好，转账很方便 |  | 2024-06-29 | 0 | 0 | 神舟十四 |  | APP打不开！我要投诉！ |  | 2024-02-22 | 2 | 0 | 神舟十四 |  | 这款软件怎么删除？ |  |  | 2024-02-22 | 0 | 0 | 阿白 |  | 使用不好， |  | 2023-11-24 | 1 | 0 | 袁永根 |  | 好，很完美！ |  | 2023-04-27 | 0 | 0 | 美玉 |  | 服务态度好 |  | 2023-04-09 | 1 | 0 | .⁹ᴳ.有人要翻车死了ᯤ. |  | 感觉不安全 |  | 2023-02-15 | 1 | 0 | 江萍 |  | 服务态度好，为用户着想。 |  | 2022-12-24 | 0 | 0 | 好運來來來  |  | 非常完美！ |  | 2022-09-08 | 0 | 0 | 박인환 |  | 非常完美 |  | 2022-09-07 | 0 | 0 | 天蓝色 |  | 这个8.5.2版本最近一直闪退 |  | 2022-08-29 | 0 | 1 | peter：下载8.5.5可正常使用 | 共1条回复 | ArthurC |  | 闪退啊，这么大个银行出这问题 |  | 2022-08-28 | 0 | 1 | peter：下载8.5.5可正常使用 | 共1条回复 | 🌺🌺李琼 |  | 更新后闪退 |  | 2022-08-27 | 0 | 0 | Rocky |  | 新的V8.5.2装到我小米11国际版MIUI Global 13.0.6上就闪退，根本启动不了。什么时候能解决啊 |  | 2022-08-26 | 3 | 1 | peter：下载8.5.5可正常使用 | 共1条回复 | peter |  | 更新后閃退,重新卸载再安裝,反复六次,始終閃退 |  | 2022-08-17 | 3 | 0 | Arthur |  | 开不了app, 太差！ |  | 2022-08-14 | 1 | 1 | peter：下载8.5.5可正常使用 | 共1条回复 | 嘿 |  | 更新後，開啟app 會閃退 |  | 2022-08-11 | 2 | 3 | peter：下载8.5.5版本可正常使用 | 共3条回复 | 小5 |  | 真烂，打开APP登录后，点哪里都提示“资源正在拼命加载中，请稍等”，等了半天也没动静！ |  | 2022-07-25 | 2 | 0 | 笑对人生 |  | 营业厅小，去解放道营业厅服务人员态度差的要命，开个卡要这证明那证明，果断放弃不用了 |  | 2022-06-21 | 2 | 0 | 全18249258055 |  | 满意的话 |  | 2022-05-28 | 0 | 0 | 慈悲心 |  | 感恩您们的辛勤付出！🌹❤️🙏 |  | 2022-05-09 | 1 | 0 | 雨霏霏 |  | 老是打不开 |  | 2022-04-06 | 2 | 1 | peter：下载8.5.5可正常使用 | 共1条回复 | 无名小姐姐 |  | 太费量了 |  | 2021-11-20 | 2 | 0 | 牵动 |  | ，句句金句 |  | 2021-10-14 | 1 | 0 | L明财 |  | 没工作可以办卡吗 |  | 2021-09-19 | 2 | 0 | 搁浅 |  | 太差劲了 |  | 2021-07-17 | 2 | 0 | 雪山苍穹 |  | 中信银行信用卡方便快捷 |  | 2021-06-24 | 1 | 0 | John |  | 传个身份证半天认证不了 |  | 2021-06-20 | 1 | 0 | 李银涛 |  | 非常的好 |  | 2021-05-28 | 0 | 0 | 永无止境 |  | 很好完美 |  | 2021-04-27 | 1 | 0 | 李果子👉   👈 |  | 很好很好 |  | 2021-03-24 | 0 | 0 | 朱祖德 |  | 服务态度很好 |  | 2021-03-22 | 0 | 0 | 平安的你 |  | 很好快捷 |  | 2021-01-23 | 1 | 0 | 转身，未来！ |  | 嗯哪行啊吧 |  | 2021-01-11 | 0 | 0 | 城厢街道仁爱家园沈爱萍 |  | 到临浦来开一家 |  | 2020-12-10 | 1 | 0 | 城厢街道仁爱家园沈爱萍 |  | 在临浦来开一家 |  | 2020-12-10 | 1 | 0 | 『*』 |  | laji银行，牛批得很嘛，劳资跑了五趟才办理工资卡成功，如果能给零星绝不给一星！ |  | 2020-10-30 | 14 | 1 | ᝰꫛꪮꪮꫜ 🌙：笑死我了 | 共1条回复 | 繁*芜 |  | 怎么没有指纹登录 |  | 2020-10-09 | 2 | 0 | ོ*⁰ |  | 指纹功能不正常 |  | 2020-09-27 | 1 | 0 | 像*风 |  | 好用，方便，省心中 |  | 2020-09-25 | 0 | 0 | 晚*邮 |  | 不错，中信银行，APP |  | 2020-08-10 | 1 | 5 | 吴国强：中信银行手机黑屏打不开 | 共5条回复 | c*兔 |  | 用这个软件申请了人生中的第一张信用卡，里面有很多信用卡种类可以选择，而且每种卡有不同的优惠。选来选去，最终选择了中信京东联名卡，免年费、京东全年plus 卡以及全年爱奇艺会员，实在太适合我这种追剧的宅女了(∩ᵒ̴̶̷̤⌔ᵒ̴̶̷̤∩)填写资料提交之后，一个月左右就提醒我可以去银行激活。激活速度蛮快，银行工作人员态度也不错，网络办卡比银行方便多了！已经安利给朋友 (＾▽＾) | 展开 |  | 2020-02-15 | 3 | 0</td>
+      <td>0</td>
+      <td>负向</td>
+      <td>服务</td>
+      <td>官网非最新版</td>
+    </tr>
+    <tr>
+      <td>华为市场</td>
+      <td>2026-02-04 00:00:00</td>
+      <td>无标题</td>
+      <td>AMZ 更新了打不开了，这是要跑路了吗？</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>闪退</td>
+      <td>更新后打不开</td>
+    </tr>
+    <tr>
+      <td>华为市场</td>
+      <td>2026-01-28 00:00:00</td>
+      <td>无标题</td>
+      <td>Mate40Pro 强制升级版本，不然一直卡开屏。就算你打算不支持低版本，也好歹在软件内提示，而不是完全进不去。</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>功能Bug</td>
+      <td>强制升级卡开屏</td>
+    </tr>
+    <tr>
+      <td>华为市场</td>
+      <td>2026-01-28 00:00:00</td>
+      <td>无标题</td>
+      <td>Honor30-Pro 打开黑屏，半天都进不去</td>
+      <td>2</td>
+      <td>负向</td>
+      <td>闪退</td>
+      <td>打开即黑屏</td>
+    </tr>
+    <tr>
+      <td>腾讯应用宝</td>
+      <td>2026-01-24 00:00:00</td>
+      <td>无标题</td>
+      <td>杰 |  | 专门下载应用宝来给个差评，一个有自己官网的银行，官网有APP下载页的银行，下载的既然不是最新版，最新版要靠第三方APP下载，不更新就打不开进不去，这还想用户安心放钱到你银行？自己官网不是最新版，最新版在第三方，还做什么网站，把服务器都关了得了 |  | 2026-01-24 | 1 | 0</td>
+      <td>0</td>
+      <td>负向</td>
+      <td>服务</td>
+      <td>官网非最新版</td>
+    </tr>
+    <tr>
+      <td>腾讯应用宝</td>
+      <td>2026-01-24 00:00:00</td>
+      <td>无标题</td>
+      <td>2026-01-24 | 1 | 0</td>
+      <td>0</td>
+      <td>中性</td>
+      <td>其他</td>
+      <td>仅含时间数据</td>
+    </tr>
+  </tbody>
+</table></div>
+        </div>
+    </body>
+    </html>
+    

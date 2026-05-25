@@ -1,0 +1,639 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>全渠道评价分析报告</title>
+        <style>
+            body { font-family: sans-serif; background: #f5f7fa; padding: 20px; color:#333; }
+            .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; }
+            .dashboard { display: flex; gap: 15px; margin-bottom: 30px; }
+            .card { flex: 1; padding: 20px; border-radius: 8px; text-align: center; color: white; }
+            .card-total { background: #34495e; } .card-pos { background: #27ae60; } .card-neg { background: #e74c3c; } .card-neu { background: #f39c12; }
+            .card h2 { margin: 10px 0 0; font-size: 32px; }
+            .pct { font-size: 16px; opacity: 0.85; margin-left: 5px; font-weight: normal; }
+            .insights { display: flex; gap: 20px; margin-bottom: 30px; }
+            .insight-box { flex: 1; border: 1px solid #eee; padding: 20px; border-radius: 8px; border-top: 4px solid #ccc; background:#fcfcfc; }
+            .box-title { margin-top: 0; color: #2c3e50; border-bottom: 1px dashed #ddd; padding-bottom: 10px; margin-bottom: 15px; }
+            .review-mini-card { background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 4px; font-size: 13px; }
+            .bad-card { border-left: 4px solid #e74c3c; } .good-card { border-left: 4px solid #27ae60; }
+            .rmc-header { display: flex; justify-content: space-between; margin-bottom: 6px; font-weight: bold; }
+            .rmc-ai { background: #e8f4f8; display: inline-block; padding: 3px 6px; border-radius: 4px; font-size: 12px; font-weight:bold; color: #333; }
+            .data-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 12px; }
+            .data-table th, .data-table td { border: 1px solid #eee; padding: 10px; text-align: left; }
+            .data-table th { background: #f8f9fa; }
+            .daily-table th { background: #e8f4f8; text-align: center; }
+            .daily-table td { text-align: center; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 style="text-align:center; padding-bottom:15px; border-bottom: 2px solid #eee;">📊 APP 全渠道评价智能分析报告</h1>
+            <div class="dashboard">
+                <div class="card card-total"><h3>总数</h3><h2>35</h2></div>
+                <div class="card card-pos"><h3>好评</h3><h2>1<span class="pct">(2.9%)</span></h2></div>
+                <div class="card card-neu"><h3>中评</h3><h2>0<span class="pct">(0.0%)</span></h2></div>
+                <div class="card card-neg"><h3>差评</h3><h2>34<span class="pct">(97.1%)</span></h2></div>
+            </div>
+            <div class="insights">
+                <div class="insight-box" style="flex: 1; border-top-color: #3498db;">
+                    <h3 class="box-title">📊 总体渠道概况</h3>
+                    <p style="font-weight: bold;">总评论数：35 条</p>
+                    <ul style="list-style: none; padding: 0; line-height: 2.0;">
+                        <li>🔹 华为应用市场：<b>0</b> 条</li>
+                        <li>🔹 腾讯应用宝：<b>2</b> 条</li>
+                        <li>🔹 苹果App Store：<b>33</b> 条</li>
+                    </ul>
+                </div>
+                <div class="insight-box" style="flex: 2; border-top-color: #9b59b6;">
+                    <h3 class="box-title">📈 每日市场评论数量统计</h3>
+                    <div style="overflow-x: auto;"><table border="1" class="dataframe data-table daily-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>日期</th>
+      <th>华为市场</th>
+      <th>腾讯应用宝</th>
+      <th>苹果App Store</th>
+      <th>合计</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2026-05-13</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-05-06</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-05-01</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-04-29</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-04-21</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>2 条</td>
+      <td>2 条</td>
+    </tr>
+    <tr>
+      <td>2026-04-10</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>2 条</td>
+      <td>2 条</td>
+    </tr>
+    <tr>
+      <td>2026-03-28</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>2 条</td>
+      <td>2 条</td>
+    </tr>
+    <tr>
+      <td>2026-03-26</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-03-16</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-03-07</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-03-05</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-03-04</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-03-03</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-03-02</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-02-27</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-02-21</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-02-13</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-02-09</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-02-07</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+      <td>2 条</td>
+    </tr>
+    <tr>
+      <td>2026-02-06</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>2 条</td>
+      <td>2 条</td>
+    </tr>
+    <tr>
+      <td>2026-02-01</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>2 条</td>
+      <td>2 条</td>
+    </tr>
+    <tr>
+      <td>2026-01-31</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>2 条</td>
+      <td>2 条</td>
+    </tr>
+    <tr>
+      <td>2026-01-30</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-01-29</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-01-28</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-01-26</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-01-24</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-01-23</td>
+      <td>0 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>1 条</td>
+    </tr>
+  </tbody>
+</table></div>
+                </div>
+            </div>
+            <div class="insights">
+                <div class="insight-box" style="border-top-color: #e74c3c;">
+                    <h3>📉 差评雷区 TOP 5</h3><ul><li>🔴 <b>功能Bug</b>：8次</li><li>🔴 <b>闪退</b>：7次</li><li>🔴 <b>服务</b>：6次</li><li>🔴 <b>UI体验</b>：5次</li><li>🔴 <b>登录</b>：5次</li></ul><div class="review-mini-card bad-card"><div class="rmc-header"><span class="rmc-tag bad-tag">【闪退】</span><span>0星</span></div><div class="rmc-content">"米同学 | 真的跟差劲啊 每隔一段时间莫名其妙登录是 app 会闪退..."</div><div class="rmc-ai">🤖 AI总结：登录后闪退</div></div><div class="review-mini-card bad-card"><div class="rmc-header"><span class="rmc-tag bad-tag">【服务】</span><span>0星</span></div><div class="rmc-content">"杰 | 专门下载应用宝来给个差评，一个有自己官网的银行，官网有APP下载页的银行，下载的既然不是最新版，最新版要靠第三方APP下载，不更新就打不开进不去，这还想用户安心放钱到你银行？自己官网不是最新版，最新版在第三方，还做什么网站，把服务器都关了得了..."</div><div class="rmc-ai">🤖 AI总结：官网APP非最新</div></div><div class="review-mini-card bad-card"><div class="rmc-header"><span class="rmc-tag bad-tag">【服务】</span><span>1星</span></div><div class="rmc-content">"我看这里理我吗..."</div><div class="rmc-ai">🤖 AI总结：客服响应缺失</div></div><div class="review-mini-card bad-card"><div class="rmc-header"><span class="rmc-tag bad-tag">【功能Bug】</span><span>1星</span></div><div class="rmc-content">"连着wifi说无网..."</div><div class="rmc-ai">🤖 AI总结：WiFi下误判无网</div></div><div class="review-mini-card bad-card"><div class="rmc-header"><span class="rmc-tag bad-tag">【功能Bug】</span><span>1星</span></div><div class="rmc-content">"除了借钱能点开，其他都点不开..."</div><div class="rmc-ai">🤖 AI总结：仅借钱可操作</div></div>
+                </div>
+                <div class="insight-box" style="border-top-color: #27ae60;">
+                    <h3>📈 好评亮点 TOP 5</h3><ul><li>🟢 <b>其他</b>：1次</li></ul><div class="review-mini-card good-card"><div class="rmc-header"><span class="rmc-tag good-tag">【其他】</span><span>3星</span></div><div class="rmc-content">"666..."</div><div class="rmc-ai">🤖 AI总结：高度赞扬</div></div>
+                </div>
+            </div>
+            <h3 style="margin-top:20px; padding-bottom: 10px; border-bottom: 2px solid #eee;">🔍 评价明细清单</h3>
+            <div style="overflow-x: auto;"><table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>来源</th>
+      <th>具体时间</th>
+      <th>标题</th>
+      <th>内容</th>
+      <th>评分</th>
+      <th>情感倾向</th>
+      <th>问题分类</th>
+      <th>一句话总结</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>App Store</td>
+      <td>2026-05-13 02:13:22</td>
+      <td>app一直不稳定</td>
+      <td>连着wifi说无网</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>功能Bug</td>
+      <td>WiFi下误判无网</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-05-06 09:29:25</td>
+      <td>进入app之后，点不开，一片空白</td>
+      <td>进入app之后，一片空白，根本打不开</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>UI体验</td>
+      <td>首页空白打不开</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-05-01 01:56:31</td>
+      <td>没有银行卡的没用</td>
+      <td>我是想在这边开户，你开户你要实名认证，你实名认证之后又要银行卡，没有银行卡不能开户</td>
+      <td>4</td>
+      <td>负向</td>
+      <td>服务</td>
+      <td>开户流程不闭环</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-04-29 02:20:59</td>
+      <td>时隔多年，@中信银行  还是一样的烂，一样的低效和敷衍。 我看看有微博公关吗？ @中信百信银行  所以也不能信任，多年前也感受不良 ​​​</td>
+      <td>我看这里理我吗</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>服务</td>
+      <td>客服响应缺失</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-04-21 08:27:43</td>
+      <td>为什么打不开啊？？？？？</td>
+      <td>为什么打不开啊？？？？？</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>功能Bug</td>
+      <td>无法正常打开</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-04-21 03:46:15</td>
+      <td>垃圾</td>
+      <td>除了借钱能点开，其他都点不开</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>功能Bug</td>
+      <td>仅借钱可操作</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-04-10 03:50:15</td>
+      <td>Apple Pay里做个卡面呗</td>
+      <td>推出了联名卡还花了我68添加到Apple Pay里发现是默认卡面，感觉被诈骗了🙃</td>
+      <td>2</td>
+      <td>负向</td>
+      <td>服务</td>
+      <td>联名卡误导消费</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-04-10 01:02:14</td>
+      <td>为什么进入不了</td>
+      <td>经常卡在欢迎页面进不去</td>
+      <td>2</td>
+      <td>负向</td>
+      <td>闪退</td>
+      <td>卡在欢迎页</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-03-28 21:23:39</td>
+      <td>更到最新不能用</td>
+      <td>垃圾，更新完直接卡初始页面，直接不能用了</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>闪退</td>
+      <td>更新后无法启动</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-03-28 16:26:20</td>
+      <td>毛病不少</td>
+      <td>面容识别不断地闪，两次才能够进去。而且系统反应时间太慢，有的时候进去了还自动地跳出来。总之，这个手机银行程序比起其他的，比如说招商银行，差得太远</td>
+      <td>3</td>
+      <td>负向</td>
+      <td>UI体验</td>
+      <td>面容识别卡顿</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-03-26 15:20:27</td>
+      <td>不更新不能用，垃圾</td>
+      <td>垃圾</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>其他</td>
+      <td>极度负面评价</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-03-16 01:36:25</td>
+      <td>骚扰电话很烦人</td>
+      <td>柜台服务已经很失望了，办贷款的骚扰更恶心。</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>服务</td>
+      <td>贷款骚扰恶心</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-03-07 13:58:32</td>
+      <td>各种骚扰电话加恶意扣款</td>
+      <td>恶心</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>其他</td>
+      <td>强烈负面情绪</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-03-05 03:15:48</td>
+      <td>卡的都进不了页面</td>
+      <td>更新后一只卡，要么卡在初始化界面，要么就卡在人脸识别界面，总之就是卡</td>
+      <td>2</td>
+      <td>负向</td>
+      <td>功能Bug</td>
+      <td>更新后严重卡顿</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-03-04 01:26:58</td>
+      <td>打不开</td>
+      <td>打不开</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>登录</td>
+      <td>完全打不开</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-03-03 01:27:20</td>
+      <td>打不开</td>
+      <td>手机银行怎么搞都打不开了，你敢信，我的钱怎么办呢</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>登录</td>
+      <td>银行APP打不开</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-03-02 14:42:30</td>
+      <td>登录问题</td>
+      <td>一点登录就显示网络差</td>
+      <td>4</td>
+      <td>负向</td>
+      <td>登录</td>
+      <td>登录提示网络差</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-02-27 07:29:11</td>
+      <td>突然打不开了</td>
+      <td>666</td>
+      <td>3</td>
+      <td>正向</td>
+      <td>其他</td>
+      <td>高度赞扬</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-02-21 07:29:11</td>
+      <td>没有用过这么垃圾的银行app</td>
+      <td>绝对反人类的操作逻辑</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>UI体验</td>
+      <td>操作逻辑反人类</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-02-13 08:32:21</td>
+      <td>五星评价是为了让大家看到！！！最烂的银行APP</td>
+      <td>我真是服了，用了那么多银行app，中信是最烂的，动不动就卡死在界面，进不去，我连里面还剩多少钱都不知道，卡死一个星期了，就是进不去，那么大一个银行，这点问题都处理不了？？？</td>
+      <td>5</td>
+      <td>负向</td>
+      <td>功能Bug</td>
+      <td>长期卡死进不去</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-02-09 12:52:22</td>
+      <td>all了</td>
+      <td>什么垃圾 更新后就卡开始页面 打也打不开</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>闪退</td>
+      <td>更新后卡死打不开</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-02-07 13:06:50</td>
+      <td>app网路经常性断联</td>
+      <td>到底是谁给你们开发的app，中信银行也算是头部银行了，app搞这么垃圾，app动不动就网络异常</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>网络服务</td>
+      <td>动不动网络异常</td>
+    </tr>
+    <tr>
+      <td>腾讯应用宝</td>
+      <td>2026-02-07 00:00:00</td>
+      <td>无标题</td>
+      <td>米同学 | 真的跟差劲啊 每隔一段时间莫名其妙登录是 app 会闪退</td>
+      <td>0</td>
+      <td>负向</td>
+      <td>闪退</td>
+      <td>登录后闪退</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-02-06 08:17:35</td>
+      <td>捆绑消费</td>
+      <td>办工资卡还必须办信用卡  信用卡不注销不用的话每年扣费200   你们这银行真牛逼</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>服务</td>
+      <td>强制办卡扣费</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-02-06 06:39:26</td>
+      <td>不好用，面容解锁一直用不了。</td>
+      <td>一点都不好用，面容解锁一直用不了。</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>功能Bug</td>
+      <td>面容解锁失效</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-02-01 13:52:14</td>
+      <td>太难用了 垃圾交互</td>
+      <td>你们自己产品有体验吗？在办理信用卡页面 永远都会退出首页 从来没见过这么垃圾的产品</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>功能Bug</td>
+      <td>信用卡页退出首页</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-02-01 06:55:49</td>
+      <td>总是显示连接不上网络</td>
+      <td>网络好好的一直进不去</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>登录</td>
+      <td>网络好却进不去</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-01-31 22:53:57</td>
+      <td>下载好几次都打不开 什么玩意</td>
+      <td>下载好几次都打不开 什么玩意</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>闪退</td>
+      <td>下载后打不开</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-01-31 06:58:49</td>
+      <td>更新完打不开了</td>
+      <td>26.1.30日，更新完软件打不开了，真烦人，这么大银行这么大纰漏</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>闪退</td>
+      <td>更新后无法打开</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-01-30 09:32:17</td>
+      <td>人才app更新完打不开</td>
+      <td>人才app更新完打不开</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>闪退</td>
+      <td>更新后打不开</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-01-29 14:20:38</td>
+      <td>登陆不了</td>
+      <td>更新完最新版本就一直卡着不让登陆，都几天了还没有解决，跟其他银行app比起来就是垃圾</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>登录</td>
+      <td>更新后卡登录</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-01-28 10:16:32</td>
+      <td>！？？</td>
+      <td>死在开始那个界面啥意思？？？</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>UI体验</td>
+      <td>卡在启动页</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-01-26 23:30:39</td>
+      <td>程序不稳定</td>
+      <td>燃气充值老是失败</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>功能Bug</td>
+      <td>燃气充值失败</td>
+    </tr>
+    <tr>
+      <td>腾讯应用宝</td>
+      <td>2026-01-24 00:00:00</td>
+      <td>无标题</td>
+      <td>杰 | 专门下载应用宝来给个差评，一个有自己官网的银行，官网有APP下载页的银行，下载的既然不是最新版，最新版要靠第三方APP下载，不更新就打不开进不去，这还想用户安心放钱到你银行？自己官网不是最新版，最新版在第三方，还做什么网站，把服务器都关了得了</td>
+      <td>0</td>
+      <td>负向</td>
+      <td>服务</td>
+      <td>官网APP非最新</td>
+    </tr>
+    <tr>
+      <td>App Store</td>
+      <td>2026-01-23 11:01:16</td>
+      <td>登录不进去</td>
+      <td>怎么一直停在第一个页面进不去，卸载了重装也不行</td>
+      <td>1</td>
+      <td>负向</td>
+      <td>UI体验</td>
+      <td>卡首页进不去</td>
+    </tr>
+  </tbody>
+</table></div>
+        </div>
+    </body>
+    </html>
+    

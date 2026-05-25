@@ -1,0 +1,127 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>全渠道评价分析报告</title>
+        <style>
+            body { font-family: sans-serif; background: #f5f7fa; padding: 20px; color:#333; }
+            .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; }
+            .dashboard { display: flex; gap: 15px; margin-bottom: 30px; }
+            .card { flex: 1; padding: 20px; border-radius: 8px; text-align: center; color: white; }
+            .card-total { background: #34495e; } .card-pos { background: #27ae60; } .card-neg { background: #e74c3c; } .card-neu { background: #f39c12; }
+            .card h2 { margin: 10px 0 0; font-size: 32px; }
+            .pct { font-size: 16px; opacity: 0.85; margin-left: 5px; font-weight: normal; }
+            .insights { display: flex; gap: 20px; margin-bottom: 30px; }
+            .insight-box { flex: 1; border: 1px solid #eee; padding: 20px; border-radius: 8px; border-top: 4px solid #ccc; background:#fcfcfc; }
+            .box-title { margin-top: 0; color: #2c3e50; border-bottom: 1px dashed #ddd; padding-bottom: 10px; margin-bottom: 15px; }
+            .review-mini-card { background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 4px; font-size: 13px; }
+            .bad-card { border-left: 4px solid #e74c3c; } .good-card { border-left: 4px solid #27ae60; }
+            .rmc-header { display: flex; justify-content: space-between; margin-bottom: 6px; font-weight: bold; }
+            .rmc-ai { background: #e8f4f8; display: inline-block; padding: 3px 6px; border-radius: 4px; font-size: 12px; font-weight:bold; color: #333; }
+            .data-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 12px; }
+            .data-table th, .data-table td { border: 1px solid #eee; padding: 10px; text-align: left; }
+            .data-table th { background: #f8f9fa; }
+            .daily-table th { background: #e8f4f8; text-align: center; }
+            .daily-table td { text-align: center; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 style="text-align:center; padding-bottom:15px; border-bottom: 2px solid #eee;">📊 APP 全渠道评价智能分析报告</h1>
+            <div class="dashboard">
+                <div class="card card-total"><h3>总数</h3><h2>2</h2></div>
+                <div class="card card-pos"><h3>好评</h3><h2>0<span class="pct">(0.0%)</span></h2></div>
+                <div class="card card-neu"><h3>中评</h3><h2>0<span class="pct">(0.0%)</span></h2></div>
+                <div class="card card-neg"><h3>差评</h3><h2>2<span class="pct">(100.0%)</span></h2></div>
+            </div>
+            <div class="insights">
+                <div class="insight-box" style="flex: 1; border-top-color: #3498db;">
+                    <h3 class="box-title">📊 总体渠道概况</h3>
+                    <p style="font-weight: bold;">总评论数：2 条</p>
+                    <ul style="list-style: none; padding: 0; line-height: 2.0;">
+                        <li>🔹 华为应用市场：<b>0</b> 条</li>
+                        <li>🔹 腾讯应用宝：<b>2</b> 条</li>
+                        <li>🔹 苹果App Store：<b>0</b> 条</li>
+                    </ul>
+                </div>
+                <div class="insight-box" style="flex: 2; border-top-color: #9b59b6;">
+                    <h3 class="box-title">📈 每日市场评论数量统计</h3>
+                    <div style="overflow-x: auto;"><table border="1" class="dataframe data-table daily-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>日期</th>
+      <th>华为市场</th>
+      <th>腾讯应用宝</th>
+      <th>苹果App Store</th>
+      <th>合计</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2026-02-07</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+    </tr>
+    <tr>
+      <td>2026-01-24</td>
+      <td>0 条</td>
+      <td>1 条</td>
+      <td>0 条</td>
+      <td>1 条</td>
+    </tr>
+  </tbody>
+</table></div>
+                </div>
+            </div>
+            <div class="insights">
+                <div class="insight-box" style="border-top-color: #e74c3c;">
+                    <h3>📉 差评雷区 TOP 5</h3><ul><li>🔴 <b>闪退</b>：1次</li><li>🔴 <b>服务</b>：1次</li></ul><div class="review-mini-card bad-card"><div class="rmc-header"><span class="rmc-tag bad-tag">【闪退】</span><span>0星</span></div><div class="rmc-content">"米同学 | 真的跟差劲啊 每隔一段时间莫名其妙登录是 app 会闪退..."</div><div class="rmc-ai">🤖 AI总结：登录后频繁闪退</div></div><div class="review-mini-card bad-card"><div class="rmc-header"><span class="rmc-tag bad-tag">【服务】</span><span>0星</span></div><div class="rmc-content">"杰 | 专门下载应用宝来给个差评，一个有自己官网的银行，官网有APP下载页的银行，下载的既然不是最新版，最新版要靠第三方APP下载，不更新就打不开进不去，这还想用户安心放钱到你银行？自己官网不是最新版，最新版在第三方，还做什么网站，把服务器都关了得了..."</div><div class="rmc-ai">🤖 AI总结：官网APP非最新版</div></div>
+                </div>
+                <div class="insight-box" style="border-top-color: #27ae60;">
+                    <h3>📈 好评亮点 TOP 5</h3><ul><li>暂无</li></ul>
+                </div>
+            </div>
+            <h3 style="margin-top:20px; padding-bottom: 10px; border-bottom: 2px solid #eee;">🔍 评价明细清单</h3>
+            <div style="overflow-x: auto;"><table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>来源</th>
+      <th>具体时间</th>
+      <th>标题</th>
+      <th>内容</th>
+      <th>评分</th>
+      <th>情感倾向</th>
+      <th>问题分类</th>
+      <th>一句话总结</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>腾讯应用宝</td>
+      <td>2026-02-07 00:00:00</td>
+      <td>无标题</td>
+      <td>米同学 | 真的跟差劲啊 每隔一段时间莫名其妙登录是 app 会闪退</td>
+      <td>0</td>
+      <td>负向</td>
+      <td>闪退</td>
+      <td>登录后频繁闪退</td>
+    </tr>
+    <tr>
+      <td>腾讯应用宝</td>
+      <td>2026-01-24 00:00:00</td>
+      <td>无标题</td>
+      <td>杰 | 专门下载应用宝来给个差评，一个有自己官网的银行，官网有APP下载页的银行，下载的既然不是最新版，最新版要靠第三方APP下载，不更新就打不开进不去，这还想用户安心放钱到你银行？自己官网不是最新版，最新版在第三方，还做什么网站，把服务器都关了得了</td>
+      <td>0</td>
+      <td>负向</td>
+      <td>服务</td>
+      <td>官网APP非最新版</td>
+    </tr>
+  </tbody>
+</table></div>
+        </div>
+    </body>
+    </html>
+    
